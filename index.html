@@ -42,11 +42,32 @@
     //     }
     // });
     // initializing the counter to perform the task
+
+    
     let count=0;
-    add.addEventListener("click",()=>{count++; output.innerHTML=count;});
-    subtract.addEventListener("click",()=>{count--; output.innerHTML=count;
+
+    function checkZero (c){
+        if(c === 0){
+            subtract.style.display = "none";
+        }else if(c > 0) {
+            subtract.style.display = "block";
+        }
+    }
+
+    add.addEventListener("click",()=>{
+        count++;
+        checkZero(count)
+        output.innerHTML = count;
     })
+        
+    subtract.addEventListener("click",()=>{
+        count--;
+        checkZero(count)
+        output.innerHTML = count;
+    })
+
     subtract.disabled= Number( output.innerHTML)<0;
+
 
 </script>
 </html>
