@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js counter</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h2>Javascript counter</h2>
+    <div class="counter">
+    <button id="subtract">-</button> <span id="output">0</span> <button id="add">+</button>
+    </div>
+    
+</body>
+<script>
+    let add=document.querySelector("#add");
+    let subtract= document.querySelector("#subtract");
+    let output=document.querySelector("#output");
+    
+    // not using the counter
+    // add.addEventListener("click",function(){
+    //     let output=document.querySelector("#output");
+    //     let result=Number(output.innerText) + 1;
+    //     output.innerText=result;
+    //     // if(result=>1){
+
+    //     // }
+    // });
+
+    // subtract.addEventListener("click",function(){
+    //     let output=document.querySelector("#output");
+    //     let resultt=Number(output.innerText) - 1;
+    //     output.innerText=resultt;
+    //     if(resultt <1){
+    //         document.getElementById('subtract').disabled =true;
+    //     }
+    //     else{
+    //         document.getElementById('subtract').disabled=false;
+    //     }
+    // });
+    // initializing the counter to perform the task
+    let count=0;
+    add.addEventListener("click",()=>{count++; output.innerHTML=count;});
+    subtract.addEventListener("click",()=>{count--; output.innerHTML=count;
+    })
+    subtract.disabled= Number( output.innerHTML)<0;
+
+</script>
+</html>
